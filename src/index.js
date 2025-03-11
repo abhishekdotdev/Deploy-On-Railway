@@ -6,6 +6,13 @@ const app = express();
 
 app.use(rateLimiterUsingThirdParty);
 
+app.get('/', (req, res) => {
+  res.status(200).json({
+    success: true,
+    message: "Hey! It's Working Yrr!!",
+  });
+});
+
 app.get('/ping', (req, res) => {
   res.status(200).json({
     success: true,
