@@ -1,7 +1,10 @@
 const express = require('express');
 const { PORT } = require('./config/serverConfig');
+const { rateLimiterUsingThirdParty } = require('./middlewares/rateLimiter');
 
 const app = express();
+
+app.use(rateLimiterUsingThirdParty);
 
 app.get('/ping', (req, res) => {
   res.status(200).json({
