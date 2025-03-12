@@ -6,7 +6,6 @@ async function dropDown() {
     // const countDoc = await dropDownItem.aggregate([{ $count: 'myCount' }]);
     const data = response.slice(0, 5);
     const countDoc = data.length;
-
     return { data, countDoc };
   } catch (error) {
     console.log(error);
