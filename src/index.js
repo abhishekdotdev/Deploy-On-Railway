@@ -3,9 +3,13 @@ const { PORT } = require('./config/serverConfig');
 const { rateLimiterUsingThirdParty } = require('./middlewares/rateLimiter');
 const { connectDB } = require('./config/dbConfig');
 
+const dropDownRoutes = require('./routes/dropdownRoutes');
+
 const app = express();
 
 app.use(rateLimiterUsingThirdParty);
+
+app.use('/api/v1', dropDownRoutes);
 
 app.get('/', (req, res) => {
   res.status(200).json({
