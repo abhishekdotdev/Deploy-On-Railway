@@ -2,12 +2,15 @@ const express = require('express');
 const { PORT } = require('./config/serverConfig');
 const { rateLimiterUsingThirdParty } = require('./middlewares/rateLimiter');
 const { connectDB } = require('./config/dbConfig');
+const cors = require('cors');
 
 const dropDownRoutes = require('./routes/dropdownRoutes');
 
 const app = express();
 
 app.use(rateLimiterUsingThirdParty);
+
+app.use(cors());
 
 app.use('/api/v1', dropDownRoutes);
 
