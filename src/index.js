@@ -1,6 +1,7 @@
 const express = require('express');
 const { PORT } = require('./config/serverConfig');
 const { rateLimiterUsingThirdParty } = require('./middlewares/rateLimiter');
+const { connectDB } = require('./config/dbConfig');
 
 const app = express();
 
@@ -22,4 +23,5 @@ app.get('/ping', (req, res) => {
 
 app.listen(PORT, () => {
   console.log(`Server is running on ${PORT}`);
+  connectDB();
 });
