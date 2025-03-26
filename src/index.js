@@ -10,7 +10,7 @@ const app = express();
 
 app.use(rateLimiterUsingThirdParty);
 
-app.use(cors());
+app.use(cors('*'));
 
 app.use('/api/v1', dropDownRoutes);
 
