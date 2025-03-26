@@ -6,11 +6,11 @@ const seedData = async () => {
   try {
     await connectDB();
     await dropDownItem.insertMany([
-      { name: 'Option 1', value: 'option1' },
-      { name: 'Option 2', value: 'option2' },
-      { name: 'Option 3', value: 'option3' },
+      { name: 'Oppo', value: '1' },
+      { name: 'Redmi ', value: '2' },
+      { name: 'Vivo', value: '3' },
     ]);
-    console.log('Dropdown items inserted');
+    console.log('Dropdown items inserted sucessfully!');
   } catch (error) {
     console.error('Error inserting data:', error);
   } finally {
